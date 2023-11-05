@@ -4,9 +4,17 @@ import { Link } from "react-router-dom";
 
 export default function Books({ id, title, author, image, publisher, year }) {
   return (
-    <Flex>
-      <Link to={`/books/${id}`}>
-      <Card key={id} my={4} p={4} cursor='pointer' boxShadow='dark-lg' rounded='md' bg='white' flex='1'>
+    <Link to={`/books/${id}`}>
+      <Card
+        key={id}
+        my={4}
+        p={{ base: 6, md: 8 }}
+        cursor='pointer'
+        boxShadow='dark-lg'
+        rounded='md'
+        bg='white'
+        w={{ base: "100%", md: "auto" }} 
+      >
         <VStack>
           <Heading size={"md"}>
             {title} ({year})
@@ -19,7 +27,6 @@ export default function Books({ id, title, author, image, publisher, year }) {
           </Text>
         </VStack>
       </Card>
-      </Link>
-    </Flex>
+    </Link>
   );
 }

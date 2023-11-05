@@ -16,7 +16,13 @@ export default function Homepage() {
   }, []);
 
   return (
-    <HStack w="100vw" p="3">
+    <HStack
+      w="100vw"
+      p="3"
+      spacing={4} 
+      wrap="wrap" 
+      justify="space-evenly"
+    >
       {books?.books?.map((book) => (
         <Books key={`${book.id} ${book.title}`} {...book} />
       ))}
